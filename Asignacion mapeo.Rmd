@@ -1,0 +1,111 @@
+---
+title: "Untitled"
+author: "Brandon Beltran"
+date: "17/3/2022"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(readxl)
+library(ggplot2)
+library(Hmisc)
+```
+
+```{r}
+#estadistica descriptiva
+```
+```{r}
+
+XPABLO <- read_excel("C:/Users/casa/Desktop/universidad/x/CE2020-1/XPABLO (2).xlsx")
+XPABLO<- XPABLO[-c(16,17,18,19)]
+View(XPABLO)
+```
+
+```{r}
+C_ce = cut ( x = XPABLO$CE, breaks = 3)
+unique(C_ce)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_ce)) +
+  geom_point()
+G1+
+  ggtitle("Coordenadas de conductividad eléctrica")
+```
+```{r}
+C_Mo = cut ( x = XPABLO$MO, breaks = 2)
+unique(C_Mo)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_Mo)) +
+  geom_point()
+G1+
+  ggtitle("Coordenadas de Materia orgánica")
+```
+
+```{r}
+C_ca = cut ( x = XPABLO$Ca, breaks = 4)
+unique(C_ca)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_ca)) +
+  geom_point()
+G1+
+  ggtitle("Coordenadas de Calcio")
+```
+
+
+```{r}
+C_Mg = cut ( x = XPABLO$Mg, breaks = 3)
+unique(C_Mg)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_Mg)) +
+  geom_point()
+G1+
+  ggtitle("Coordenadas de Magnesio")
+```
+
+
+```{r}
+C_K = cut ( x = XPABLO$K, breaks = 5)
+unique(C_K)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_K)) +
+  geom_point()
+G1+
+  ggtitle("Coordenadas de Potasio")
+```
+
+
+```{r}
+C_Na = cut ( x = XPABLO$Na, breaks = 3)
+unique(C_Na)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_Na)) +
+  geom_point()
+G1+
+  ggtitle("Coordenadas de Sodio")
+```
+ 
+```{r}
+C_Fe = cut ( x = XPABLO$Fe, breaks = 2)
+unique(C_Fe)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_Fe)) +
+  geom_point()
+G1+
+  ggtitle("Coordenadas de Hierro")
+```
+
+
+```{r}
+C_Zn = cut ( x = XPABLO$Zn, breaks = 3)
+unique(C_Zn)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_Zn)) +
+  geom_point()
+G1+
+  ggtitle("coordenadas de Zinc")
+```
+
+
+```{r}
+C_cu = cut ( x = XPABLO$Cu, breaks = 2)
+unique(C_cu)
+G1 = ggplot(XPABLO, aes(x = Long, y = Lat, color = C_cu)) +
+  geom_point()
+G1+
+  ggtitle("Coordenadas de Cobre")
+```
